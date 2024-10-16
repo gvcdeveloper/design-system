@@ -1,0 +1,22 @@
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vitest/config';
+import { visualizer } from 'rollup-plugin-visualizer';
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    visualizer({
+      filename: './stats.html',
+      open: true,
+      gzipSize: true,
+      brotliSize: true,
+    }),
+  ],
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/setupTests.ts',
+    includeSource: ['src/**/*.{js,ts}'],
+  },
+});
