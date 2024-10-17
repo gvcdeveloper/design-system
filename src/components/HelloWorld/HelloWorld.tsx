@@ -1,5 +1,9 @@
 const HelloWorld = (): JSX.Element => {
-  return <div>Hello, World!</div>;
+  return (
+    <div className="flex justify-center items-center h-screen">
+      ¡Hello, world!
+    </div>
+  );
 };
 
 export default HelloWorld;
