@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Button>;
 
 export const SmallPrimary: Story = {
   args: {
-    children: 'Press me',
+    label: 'Press me',
     name: 'just-name',
     size: 'sm',
   },
@@ -20,7 +20,7 @@ export const SmallPrimary: Story = {
 
 export const MediumPrimary: Story = {
   args: {
-    children: 'Press me',
+    label: 'Press me',
     name: 'just-name',
     size: 'md',
   },
@@ -28,7 +28,7 @@ export const MediumPrimary: Story = {
 
 export const LargePrimary: Story = {
   args: {
-    children: 'Press me',
+    label: 'Press me',
     name: 'just-name',
     size: 'lg',
   },
@@ -36,7 +36,7 @@ export const LargePrimary: Story = {
 
 export const Secondary: Story = {
   args: {
-    children: 'Press me',
+    label: 'Press me',
     name: 'just-name',
     variant: 'secondary',
   },

@@ -10,11 +10,11 @@ type SizeType = {
   [K in SizeButtonType]: string;
 };
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
+  label: string;
   name: string;
+  onClick: () => void;
   type?: ButtonType;
   disabled?: boolean;
-  onClick?: () => void;
   className?: string;
   size?: SizeButtonType;
   variant?: VariantButtonType;
@@ -22,7 +22,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = ({
   type = 'button',
-  children,
+  label,
   disabled = false,
   name,
   onClick,
@@ -58,7 +58,7 @@ const Button = ({
       )}
       {...rest}
     >
-      {children}
+      {label}
     </button>
   );
 };
