@@ -1,3 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #1c1c1c;
+  color: #ffffff;
+}
+
+.light {
+  --background: 248, 249, 250;
+
+  --primary-default: 30, 144, 255; /* #1e90ff */
+  --primary-hover: 28, 134, 238; /* #1c86ee */
+  --primary-disabled: 179, 212, 252; /* #b3d4fc */
+  --primary-text: 255, 255, 255; /* #ffffff */
+
+  --secondary-default: 40, 167, 69; /* #28a745 */
+  --secondary-hover: 33, 136, 56; /* #218838 */
+  --secondary-disabled: 195, 230, 203; /* #c3e6cb */
+  --secondary-text: 255, 255, 255; /* #ffffff */
+
+  --outlined-default: transparent;
+  --outlined-hover: 28, 134, 238; /* #1c86ee */
+  --outlined-text-hover: 255, 255, 255;
+  --outlined-text: 30, 144, 255; /* #1e90ff */
+  --outlined-border: 30, 144, 255; /* #82cfff */
+}
+
+.dark {
+  --background: 0, 0, 0;
+
+  --primary-default: 130, 207, 255;
+  --primary-hover: 107, 199, 255; /* #6bc7ff */
+  --primary-disabled: 64, 133, 180; /* #4085b4 */
+  --primary-text: 255, 255, 255; /* #ffffff */
+
+  --secondary-default: 77, 209, 126; /* #4dd17e */
+  --secondary-hover: 67, 182, 112; /* #43b670 */
+  --secondary-disabled: 47, 128, 80; /* #2f8050 */
+  --secondary-text: 255, 255, 255; /* #ffffff */
+
+  --outlined-default: transparent;
+  --outlined-hover: 50, 50, 50; /* #6bc7ff */
+  --outlined-text-hover: 255, 255, 255; /* #ffffff */
+  --outlined-text: 255, 255, 255; /* #ffffff */
+  --outlined-border: 60, 60, 60; /* #82cfff */
+}
