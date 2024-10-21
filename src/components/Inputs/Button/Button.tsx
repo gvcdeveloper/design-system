@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 type ButtonType = 'button' | 'submit' | 'reset';
 type SizeButtonType = 'sm' | 'md' | 'lg';
-type VariantButtonType = 'primary' | 'secondary';
+type VariantButtonType = 'primary' | 'secondary' | 'outlined';
 type VariantStylesType = {
   [K in VariantButtonType]: string;
 };
@@ -33,9 +33,11 @@ const Button = ({
 }: ButtonProps): JSX.Element => {
   const variantStyles: VariantStylesType = {
     primary:
-      'bg-primary text-primary-text hover:bg-primary-hover disabled:bg-primary-disabled cursor-pointer ',
+      'bg-primary text-primary-text hover:bg-primary-hover disabled:bg-primary-disabled',
     secondary:
-      'bg-secondary text-secondary-text hover:bg-secondary-hover disabled:bg-secondary-disabled cursor-pointer',
+      'bg-secondary text-secondary-text hover:bg-secondary-hover disabled:bg-secondary-disabled',
+    outlined:
+      'bg-outlined text-outlined-text border border-outlined-border  hover:bg-outlined-hover hover:text-outlined-text-hover disabled:hover:bg-outlined disabled:hover:text-outlined-text',
   };
 
   const sizeStyles: SizeType = {
@@ -54,6 +56,7 @@ const Button = ({
         'rounded p-2',
         sizeStyles[size],
         variantStyles[variant],
+        disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
         className
       )}
       {...rest}

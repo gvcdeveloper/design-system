@@ -41,3 +41,20 @@ export const Secondary: Story = {
     variant: 'secondary',
   },
 };
+
+export const Outlined: Story = {
+  args: {
+    label: 'Press me',
+    name: 'just-name',
+    variant: 'outlined',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    label: 'Press me',
+    name: 'just-name',
+    variant: 'outlined',
+    disabled: true,
+  },
+};
