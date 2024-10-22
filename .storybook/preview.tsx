@@ -1,6 +1,9 @@
 import type { Preview } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { ThemeProvider } from '../src/ThemeContext';
 import '../src/index.css';
+import React from 'react';
+import { themes } from '@storybook/theming';
 
 const customViewports = {
   sm: {
@@ -42,6 +45,12 @@ const customViewports = {
 
 const preview: Preview = {
   parameters: {
+    darkMode: {
+      stylePreview: true,
+      classTarget: 'body',
+      dark: { ...themes.dark, appBg: 'black' },
+      light: { ...themes.normal, appBg: 'white' },
+    },
     viewport: {
       viewports: {
         ...INITIAL_VIEWPORTS,
@@ -55,6 +64,15 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => {
+      return (
+        <ThemeProvider>
+          <Story />
+        </ThemeProvider>
+      );
+    },
+  ],
 };
 
 export default preview;

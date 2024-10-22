@@ -2,6 +2,7 @@
 
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     screens: {
       sm: '480px',
@@ -15,25 +16,33 @@ export default {
     },
     extend: {
       colors: {
+        background: 'rgba(var(--background))',
         primary: {
-          DEFAULT: '#28A745',
-          hover: '#218838',
-          disabled: '#A9D8A6',
-          text: '#FFFFFF',
+          DEFAULT: 'rgba(var(--primary-default))',
+          hover: 'rgba(var(--primary-hover))',
+          text: 'rgba(var(--primary-text))',
+          disabled: 'rgba(var(--primary-disabled))',
         },
         secondary: {
-          DEFAULT: '#DC3545',
-          hover: '#C82333',
-          disabled: '#F5B1B5',
-          text: '#FFFFFF',
+          DEFAULT: 'rgba(var(--secondary-default))',
+          hover: 'rgba(var(--secondary-hover))',
+          text: 'rgba(var(--secondary-text))',
+          disabled: 'rgba(var(--secondary-disabled))',
+        },
+        outlined: {
+          DEFAULT: 'rgba(var(--outlined-default))',
+          hover: 'rgba(var(--outlined-hover))',
+          text: 'rgba(var(--outlined-text))',
+          border: 'rgba(var(--outlined-border))',
+          'text-hover': 'rgba(var(--outlined-text-hover))',
         },
       },
     },
   },
   variants: {
     extend: {
-      backgroundColor: ['disabled'], // Para manejar el color de fondo de botones deshabilitados
-      textColor: ['disabled'], // Para manejar el color de texto de botones deshabilitados
+      backgroundColor: ['disabled'],
+      textColor: ['disabled'],
     },
   },
   plugins: [],
