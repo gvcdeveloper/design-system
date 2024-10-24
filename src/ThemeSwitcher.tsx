@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTheme } from './hooks/useTheme';
-import Button from './components/Inputs/Button/Button';
+import Switch from './components/Inputs/Switch/Switch';
 
 const ThemeSwitcher: React.FC = () => {
   const context = useTheme();
@@ -10,12 +10,7 @@ const ThemeSwitcher: React.FC = () => {
   const { isDarkMode, toggleTheme } = context;
 
   return (
-    <Button
-      onClick={toggleTheme}
-      name="hi"
-      label={isDarkMode ? 'Modo Claro' : 'Modo Oscuro'}
-      className="block mb-2"
-    />
+    <Switch name="mode-switcher" isOn={isDarkMode} handleToggle={toggleTheme} />
   );
 };
 

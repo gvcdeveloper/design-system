@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import Button from './Button';
 
 const meta = {
@@ -56,5 +58,22 @@ export const Disabled: Story = {
     name: 'just-name',
     variant: 'outlined',
     disabled: true,
+  },
+};
+
+export const WithIcon: Story = {
+  args: {
+    label: 'Press me',
+    name: 'just-name',
+    icon: <FontAwesomeIcon icon={faCoffee} />,
+  },
+};
+
+export const WithRightIcon: Story = {
+  args: {
+    label: 'Press me',
+    name: 'just-name',
+    fullWidth: true,
+    rightIcon: <FontAwesomeIcon icon={faCoffee} />,
   },
 };
