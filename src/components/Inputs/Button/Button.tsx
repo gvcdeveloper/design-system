@@ -18,6 +18,9 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   size?: SizeButtonType;
   variant?: VariantButtonType;
+  icon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
+  fullWidth?: boolean;
 }
 
 const Button = ({
@@ -29,6 +32,9 @@ const Button = ({
   className = '',
   size = 'md',
   variant = 'primary',
+  icon = null,
+  fullWidth = false,
+  rightIcon = null,
   ...rest
 }: ButtonProps): JSX.Element => {
   const variantStyles: VariantStylesType = {
@@ -53,15 +59,26 @@ const Button = ({
       name={name}
       onClick={onClick}
       className={clsx(
-        'rounded p-2',
+        'flex items-center rounded p-2',
         sizeStyles[size],
         variantStyles[variant],
         disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer',
+        fullWidth && 'w-full',
         className
       )}
       {...rest}
     >
+      {!rightIcon && icon && (
+        <label className="pr-2" title="btn-icon">
+          {icon}
+        </label>
+      )}
       {label}
+      {!icon && rightIcon && (
+        <label className="pl-2" title="btn-icon">
+          {rightIcon}
+        </label>
+      )}
     </button>
   );
 };
